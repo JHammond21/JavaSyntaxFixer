@@ -1,0 +1,37 @@
+private static void readSingleData(double[][] dataSet, ArrayList<Integer> optimalSolution, File optimalTourFile) {
+
+//Get the number of the file via substring
+String filename = optimalTourFile.getName();
+System.out.println(filename);
+String dataSetNumber  = filename.substring(filename.indexOf("_") + 1);
+dataSetNumber = dataSetNumber.substring(0, dataSetNumber.indexOf("_"));
+
+//csv formatting
+sb.append(dataSetNumber);
+sb.append(",");
+
+//if solution file exists run both
+if (optimalTourFile.exists() && !optimalTourFile.isDirectory()) {
+
+//computes algorithms against optimal tour if one exists
+System.out.println("\nOptimal Tour Efficiency:\n");
+runAlgorithms(optimalSolution, dataSet);
+
+//csv formatting
+sb.append(dataSetNumber);
+sb.append(",");
+
+//The below will run the MST dataSet in addition to the OPT
+//-----------------------------------------------
+System.out.println("\nMST  Efficiency:\n");
+optimalSolution.clear();
+runAlgorithms(optimalSolution,dataSet);
+//-----------------------------------------------
+
+} else {
+//If no file optimal solution file exists keep optimal tour empty
+System.out.println("\nNo optimal File checking the MST:");
+optimalSolution.clear();
+runAlgorithms(optimalSolution, dataSet);
+}
+}
