@@ -1,6 +1,6 @@
 # JavaSyntaxFixer
 
-converts poorly formatted code into structured java 
+Converts poorly formatted code into structured java 
 
 # Front End
 
@@ -24,7 +24,7 @@ TBC
 
 ## Built With
 
-* [WebStorm](https://www.jetbrains.com/idea/) - IDE
+* [IntelliJ](https://www.jetbrains.com/idea/) - IDE
 
 
 
